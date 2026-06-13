@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Für Dich ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, sans-serif;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(
+135deg,
+#1f1c2c,
+#928dab
+);
+color:white;
+}
+
+.card{
+width:90%;
+max-width:600px;
+background:rgba(255,255,255,0.08);
+padding:40px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+text-align:center;
+box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+h1{
+margin-bottom:15px;
+}
+
+p{
+line-height:1.7;
+margin-bottom:20px;
+}
+
+input{
+padding:12px;
+font-size:22px;
+width:150px;
+text-align:center;
+border:none;
+border-radius:10px;
+}
+
+button{
+padding:12px 25px;
+margin-top:15px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+}
+
+#videoSection{
+display:none;
+}
+
+video{
+width:100%;
+border-radius:15px;
+margin-top:20px;
+}
+
+.error{
+color:#ffb8b8;
+margin-top:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div id="loginSection">
+
+<h1>Für Dich ❤️</h1>
+
+<p>
+Das Passwort ist unser Datum ❤️
+</p>
+
+<input
+type="password"
+id="code"
+maxlength="4"
+placeholder="••••">
+
+<br>
+
+<button onclick="checkCode()">
+Öffnen
+</button>
+
+<p class="error" id="error"></p>
+
+</div>
+
+<div id="videoSection">
+
+<h1>Danke, dass du hier bist</h1>
+
+<p>
+Ich wollte dir einfach etwas zeigen,
+das mir wichtig ist.
+Ich Liebe Dich Vivien
+</p>
+
+<video id="video" controls>
+<source src="video.mp4" type="video/mp4">
+</video>
+
+</div>
+
+</div>
+
+<script>
+
+function checkCode(){
+
+let code =
+document.getElementById("code").value;
+
+if(code === "1208"){
+
+document.getElementById("loginSection")
+.style.display = "none";
+
+document.getElementById("videoSection")
+.style.display = "block";
+
+document.getElementById("video")
+.volume = 1;
+
+}else{
+
+document.getElementById("error")
+.innerText = "Falscher Code";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
